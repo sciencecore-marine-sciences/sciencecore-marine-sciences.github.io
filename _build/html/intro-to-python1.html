@@ -1,0 +1,1607 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab 3: Introduction to Python I &#8212; Marine ScienceCore</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-to-python1';</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lab 8:Investigating Surface Heat Fluxes in the Coastal Ocean" href="surface-heat-fluxes.html" />
+    <link rel="prev" title="Proposal Summary" href="proposal-summary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    ScienceCore: Marine Sciences
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What is ScienceCore?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal-summary.html">Proposal Summary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 3:  Introduction to Python I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surface-heat-fluxes.html">Lab 8:Investigating Surface Heat Fluxes in the Coastal Ocean</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro-to-python1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro-to-python1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 3:  Introduction to Python I</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-python">Why Use Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-objectives">Lesson Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebook-for-python">Using Jupyter Notebook for Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">Working with Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">Importing Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-arrays">Working with Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-am-i-reshaping-arrays">Why am I reshaping arrays??</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-ascii-data">Reading ASCII Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-figures-and-plots">Basic Figures and Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-plots">Time series plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turn-in-your-lab">Turn in your lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-3-introduction-to-python-i">
+<h1>Lab 3:  Introduction to Python I<a class="headerlink" href="#lab-3-introduction-to-python-i" title="Permalink to this headline">#</a></h1>
+<p>In this class, we will be using Python for data analysis and visualization.</p>
+<hr class="docutils" />
+<section id="why-use-python">
+<h2>Why Use Python?<a class="headerlink" href="#why-use-python" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>General-purpose, cross-platform</p></li>
+<li><p>Free and open source</p></li>
+<li><p>Users can quickly learn how to do basic tasks</p></li>
+<li><p>Robust ecosystem of scientific libraries, including powerful statistical and visualization packages</p></li>
+<li><p>Large community of scientific users and large existing codebases</p></li>
+<li><p>Major investment into Python ecosystem by Earth science research agencies, including NASA, NCAR, UK Met Office, and Lamont-Doherty Earth Observatory. For example, see <a class="reference external" href="https://pangeo.io">Pangeo</a>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="lesson-objectives">
+<h2>Lesson Objectives<a class="headerlink" href="#lesson-objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>You will learn:</p>
+<ul>
+<li><p>The basics of using Jupyter Notebook</p></li>
+<li><p>Basic syntax of Python</p></li>
+<li><p>Data types, lists, and arrays</p></li>
+<li><p>Reading in ASCII data</p></li>
+<li><p>Filter data and calculate basic summary statistics</p></li>
+<li><p>Basic plotting and visualization</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="using-jupyter-notebook-for-python">
+<h2>Using Jupyter Notebook for Python<a class="headerlink" href="#using-jupyter-notebook-for-python" title="Permalink to this headline">#</a></h2>
+<p>A Jupyter notebook allows you to easily run Python commands and check the output interactively. To run your Python code, type the code into a cell, highlight the cell, and either click the run button (►) or press the <strong>Shift</strong> and <strong>Enter</strong> keys.</p>
+<p>Adding comments to your code is an important habit and essential for documenting and sharing work, so let’s start doing that now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a comment, meant for a human. Python ignores it.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello MAS 331L!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello MAS 331L!
+</pre></div>
+</div>
+</div>
+</div>
+<p>A computer is a really big calculator.  You can use Python in this notebook just like a calculator.  What’s one plus one?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Do you need a comment here?  Maybe not, but do it anyway as good practice.</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are some of Python’s built in mathematical operators, and some commands you can run in the next cells.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Operator</p></th>
+<th class="text-center head"><p>Syntax</p></th>
+<th class="text-center head"><p>     </p></th>
+<th class="text-center head"><p>Commands to run in the next cells</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Addition</p></td>
+<td class="text-center"><p>+</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>6 + 2.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Subtraction</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>3 - 1</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Multiplication</p></td>
+<td class="text-center"><p>*</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>2.8 * 82</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Division</p></td>
+<td class="text-center"><p>/</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>57 / 3</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Exponential</p></td>
+<td class="text-center"><p>**</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>2 ** 3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Integer Division    </p></td>
+<td class="text-center"><p>//</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>5 // 2</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Modulus</p></td>
+<td class="text-center"><p>%</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>5 % 2</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Exercise 1:</strong></p>
+<p>Try the following to learn the basics of using Jupyter Notebook.</p>
+<ol class="arabic simple">
+<li><p>Create a few new cells, some by using the menu and some with key commands.  (<strong>Hint</strong>: Insert, A, B)</p></li>
+<li><p>Figure out how to delete a cell using the menu or keyboard. (<strong>Hint</strong>: Edit, DD)</p></li>
+<li><p>Create new cells and try all of the commands above.</p></li>
+<li><p>Create a new cell and change it to Markdown, which is what I am using to type these instructions.  Say hello.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#I just added a Code cell...your turn for the rest</span>
+<span class="mi">6</span> <span class="o">+</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="saving-your-work">
+<h2>Saving your work<a class="headerlink" href="#saving-your-work" title="Permalink to this headline">#</a></h2>
+<p>Save your progress periodically by clicking the disk icon or selecting File : Save Notebook.  Closing Binder will delete all of our data.</p>
+<p><strong>At the end of class, you will download your notebook with the completed exercises and turn it in as the lab assignment.</strong></p>
+<p>If you’d like, you can periodically save a copy to your local machine by doing File : Download.  This lab is not expected to crash, but anything is possible.  If you will try operations not covered in the notebook, we recommend that you download the notebook before doing so.</p>
+<p><strong>One more troubleshooting item:</strong></p>
+<p>If you run a cell and nothing happens, check the top right-hand corner of the notebook.  Binder ‘turns off’ or pauses our computer if it is idle or if something goes wrong.  If you see <strong>No Kernel</strong>, click ‘No Kernel’ and click the Select button in the popup window.</p>
+<hr class="docutils" />
+<p><strong>Acknowledge the Following</strong></p>
+<p>Acknowledge that you understand the significance of ephemeral data, the procedure for submitting the lab assignment, and the requirement to comment code by cutting and pasting each of the following into the next three cells</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#I understand that Binder will delete all of my data when I exit the notebook</span>
+<span class="c1">#I understand that after completing the exercises, I need to save a copy of the notebook to my local machine to submit as the lab assignment</span>
+<span class="c1">#I understand that I am expected to comment my code.</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<p>A variable stores a value.  For example, here, <code class="docutils literal notranslate"><span class="pre">c</span></code> is a variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">299792458</span>
+</pre></div>
+</div>
+<p>Variable names can contain only letters, digits, and underscores, and they are case sensitive.</p>
+<p>Choose variable names that actually describe the value they are holding. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">speed_of_light</span> <span class="o">=</span> <span class="mi">299792458</span>
+</pre></div>
+</div>
+<p>Intuitive variable names are key to writing clear, easy to read, reusable code.</p>
+<p><strong>Next</strong>: Define some variables!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define a bunch of variables!</span>
+<span class="n">var_int</span>    <span class="o">=</span> <span class="mi">8</span>
+<span class="n">var_float</span>  <span class="o">=</span> <span class="mf">15.0</span>
+<span class="n">var_4e8</span>    <span class="o">=</span> <span class="mf">4e8</span>
+<span class="n">var_string</span> <span class="o">=</span> <span class="s1">&#39;Hello MAS 331L!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining a variable will not return any output.  Add print statements to check values within a block of code.</p>
+<p><strong>Exercise 3:</strong></p>
+<p>Fill in the next cell using print statements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add print statements to check the variables you set above.  </span>
+<span class="c1">#I&#39;ll do the first one, and you add the rest.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_int</span><span class="p">)</span>
+<span class="c1">#Your turn</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">#</a></h2>
+<p>Every variable has a type.  In some languages, the programmer has to <em>declare</em> the type <em>before</em> using the variable.  For example, in C:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span>   <span class="n">my_id</span>
+<span class="n">char</span>  <span class="n">my_letter</span>
+<span class="nb">float</span> <span class="n">speed_of_light</span>
+</pre></div>
+</div>
+<p>Python is ‘dynamically typed’, which means that you don’t need to declare variables. Instead, Python will automatically guess the variable type based on what operations you are attempting to perform.  That said, you should have an awareness of basic variable types.</p>
+<ul class="simple">
+<li><p><strong>Numbers</strong><br>
+  <code class="docutils literal notranslate"><span class="pre">int</span></code>        - an <strong>integer</strong> is a whole number, positive or negative<br>
+  <code class="docutils literal notranslate"><span class="pre">float</span></code>       - a <strong><a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic#Floating-point_numbers">floating point number</a></strong> is a positive or negative number containing decimal digits<br><br></p></li>
+<li><p><strong>Characters</strong> <br>
+  <code class="docutils literal notranslate"><span class="pre">str</span></code>         - a <strong>string</strong> is a sequence of character data<br><br></p></li>
+<li><p><strong>Boolean</strong> <br>
+  <code class="docutils literal notranslate"><span class="pre">bool</span></code>       - a <strong>boolean</strong> is either True or False</p></li>
+</ul>
+<p>To check the type of a variable, use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function. Print out the types for the variables you declared earlier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Print out the variable types</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_int</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_float</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_4e8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_string</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
+<p>Python has many built in functions, and the syntax is usually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function_name</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We have already been using two functions: <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Using functions print and type</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here comes a list of the types...&quot;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">var_int</span><span class="p">),</span>  <span class="nb">type</span><span class="p">(</span><span class="n">var_float</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">var_4e8</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">var_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here comes a list of the types...
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(int, float, float, str)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise 4:</strong></p>
+<ol class="arabic simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">type()</span></code> to test if the following are floats or integers:</p>
+<ul class="simple">
+<li><p>2+2</p></li>
+<li><p>2*2.0</p></li>
+<li><p>var_float/var_int</p></li>
+</ul>
+</li>
+<li><p>Try some mathematical operations on strings:</p>
+<ul class="simple">
+<li><p>“Hello MAS 331L!” + “Peace Out.”</p></li>
+<li><p>4 * “Happy”</p></li>
+<li><p>4 + “Happy”</p></li>
+</ul>
+</li>
+<li><p>Use a Markdown cell or a code comment to say which thing didn’t work and why.</p></li>
+</ol>
+<p><strong>Your Solutions:</strong></p>
+</section>
+<hr class="docutils" />
+<section id="working-with-lists">
+<h2>Working with Lists<a class="headerlink" href="#working-with-lists" title="Permalink to this headline">#</a></h2>
+<p>Lists are useful for storing data. Lists are made using square brackets. They can hold any data type (integers, floats, and strings) and even mixtures of the two.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define a list of integers</span>
+<span class="n">numbers_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access elements of the list using the index. Python is zero based, so index 0 retrieves the first element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Show the element with index 3</span>
+<span class="n">numbers_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
+</div>
+<p>New items can be appended to the list using the <em>append</em> function, which has the syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The list will be updated <em>in-place</em>, which means the function will directly modify the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Append a number to our list and show the result</span>
+<span class="n">numbers_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">numbers_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 8, 15, 16, 23, 42]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes you would want to add the numbers in a list, element by element; however, the addition operator works differently on lists. For list objects, the <strong>+</strong> will <em>combine</em> lists. <strong>To perform mathematical operations, you must convert a list to an array using the NumPy package.</strong></p>
+<hr class="docutils" />
+<p><strong>Exercise 5:</strong></p>
+<ol class="arabic simple">
+<li><p>Confirm that <em>numbers_list+numbers_list</em> does not add list items element by element, but appends a copy of itself.</p></li>
+<li><p>Try multiplying <em>numbers_list</em> by an integer number.</p></li>
+<li><p>Show only the first 4 elements of <em>numbers_list</em>. The syntax for taking a subset of a list is <em>[x:y]</em>.</p></li>
+<li><p>Append your name to the list.  A string has quotes, e.g. “Bob”.  Display the resulting <em>numbers_list</em>.  Did it work?</p></li>
+</ol>
+<p><strong>Your Solutions:</strong></p>
+<hr class="docutils" />
+<p>If you successfully added your name to our <em>numbers_list</em>, then it won’t be just numbers.  Let’s fix it before using it as a numerical array in the next section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Reset our array so it contains only numbers</span>
+<span class="c1"># or else it will give us errors in the next section</span>
+<span class="n">numbers_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="importing-packages">
+<h2>Importing Packages<a class="headerlink" href="#importing-packages" title="Permalink to this headline">#</a></h2>
+<p>Packages are collections of modules which help simplify common tasks. <a class="reference external" href="https://numpy.org/">NumPy</a> is essential for mathematical operations and array manipulation.</p>
+<p>NumPy:</p>
+<ul class="simple">
+<li><p>Creates high-performance multidimensional array objects and provides tools for working with these arrays.</p></li>
+<li><p>Is a fundamental package for scientific computing with Python.</p></li>
+<li><p>Is included with the Anaconda package manager.</p></li>
+<li><p>For additional examples, please refer to the <a class="reference external" href="https://numpy.org/devdocs/user/quickstart.html">the NumPy Quick Start</a>.</p></li>
+</ul>
+<p>The basic syntax for importing packages is <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">[package</span> <span class="pre">name]</span></code>. Some packages have long names.  You can use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">[package</span> <span class="pre">name]</span> <span class="pre">as</span> <span class="pre">[alias]</span></code> to avoid repeatedly typing that long name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the NumPy package and call it &#39;np&#39;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you do not see any error after running the line above, then the package was successfully imported.  If you see an error, it probably means the package is not installed.</p>
+<hr class="docutils" />
+<section id="working-with-arrays">
+<h3>Working with Arrays<a class="headerlink" href="#working-with-arrays" title="Permalink to this headline">#</a></h3>
+<p>I can use NumPy’s array constructor <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> to convert our list to a NumPy array in order to perform mathematical array operations on it. For example, I can double each element of the array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Use NumPy to convert the list into an array</span>
+<span class="n">numbers_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">numbers_list</span><span class="p">)</span>
+<span class="c1">#Show the result of multiplying by 2</span>
+<span class="n">numbers_array</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 8, 16, 30, 32, 46, 84])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another difference between arrays and lists is that lists can only be one-dimensional. NumPy can be any number of dimensions. For example, I can change the dimensions of the data using the <code class="docutils literal notranslate"><span class="pre">reshape()</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a 2D array using the reshape function</span>
+<span class="n">numbers_array_2d</span> <span class="o">=</span> <span class="n">numbers_array</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#Display the result</span>
+<span class="n">numbers_array_2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 4,  8],
+       [15, 16],
+       [23, 42]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute gives the dimensions of the new array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Display the dimensions of the new array.</span>
+<span class="n">numbers_array_2d</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The original <em>numbers_array</em> had a length of 6, and the new array has 3 rows and 2 columns.</p>
+<hr class="docutils" />
+<p><strong>Exercise 6:</strong></p>
+<ol class="arabic simple">
+<li><p>Create a longer list, called <em>long_list</em>, by multiplying <em>numbers_list</em> by 5.</p></li>
+<li><p>Convert the list into a NumPy array, called <em>long_array</em>.</p></li>
+<li><p>Reshape <em>long_array</em> into a 2D array.</p></li>
+<li><p>Reshape <em>long_array</em> into a 3D array.</p></li>
+</ol>
+<p><strong>Note:</strong> For 3 and 4, you will get errors unless the dimensions are compatible with the original array length.  Read the error and try again.</p>
+<p><strong>Your Solutions:</strong></p>
+<p>If you are having trouble with the above exercise, make sure <em>numbers_list</em> is set correctly, or just reset it here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#If you are having problems, you may need to reset the numbers_list</span>
+<span class="n">numbers_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-am-i-reshaping-arrays">
+<h3>Why am I reshaping arrays??<a class="headerlink" href="#why-am-i-reshaping-arrays" title="Permalink to this headline">#</a></h3>
+<p> Just to introduce NumPy.  Python will often return things as lists, and you can't perform mathematical operations on a list.  NumPy can take whatever weird data object you've been stuck with and transform it into something you can do science with.  NumPy mathematical functions are also lightning fast compared to the equivalent base Python funtions.</p></section>
+<hr class="docutils" />
+<section id="reading-ascii-data">
+<h3>Reading ASCII Data<a class="headerlink" href="#reading-ascii-data" title="Permalink to this headline">#</a></h3>
+<p>The Pandas package has a function for reading text/ASCII data called <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>. Although the function appears to be meant for reading CSV files,  <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> will read <em>any</em> delimited data using the <code class="docutils literal notranslate"><span class="pre">sep=*</span></code> keyword argument. Below, you will import the <a class="reference external" href="https://pandas.pydata.org/">Pandas</a> package and read in a dataset. Note that the path below is relative to the current notebook and you may have to change the code if you are running in a different environment.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">/</span><span class="n">MB8J</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>We will look at a data file containing daily temperature and salinity data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import Pandas and alias it as &#39;pd&#39;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This actually <em>is</em> a properly formatted CSV file, so the <code class="docutils literal notranslate"><span class="pre">sep=','</span></code> is not technically required.  The <code class="docutils literal notranslate"><span class="pre">engine='python'</span></code> ensures that the command will work across different operating systems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Defining the filename allows you to write code that can be reused with different files</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/MB8J.csv&quot;</span>
+<span class="c1">#Although not descriptive, df is used in R and Python for data frames </span>
+<span class="c1"># because it is short and will need be used and reused often during data cleaning</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can inspect the contents of the dataset using the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function, which will return the first five rows of the dataset. Pandas automatically stores data in structures called <em>DataFrames</em>. DataFrames are two dimensional (rows and columns) and resemble a spreadsheet. The leftmost column is the row index and is not part of the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Peek at the data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTD</th>
+      <th>Date</th>
+      <th>T-Surface</th>
+      <th>T-Bottom</th>
+      <th>S-Surface</th>
+      <th>S-Bottom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MB8J</td>
+      <td>1/1/2019</td>
+      <td>19.418117</td>
+      <td>19.323412</td>
+      <td>8.746278</td>
+      <td>11.118851</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>1/2/2019</td>
+      <td>19.752113</td>
+      <td>19.416435</td>
+      <td>8.018461</td>
+      <td>11.788327</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>1/3/2019</td>
+      <td>19.865190</td>
+      <td>19.771955</td>
+      <td>10.140968</td>
+      <td>11.814590</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1/4/2019</td>
+      <td>19.204679</td>
+      <td>19.229073</td>
+      <td>11.242235</td>
+      <td>11.247988</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>1/5/2019</td>
+      <td>16.833044</td>
+      <td>17.105726</td>
+      <td>8.877601</td>
+      <td>11.490634</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The data contains a time series of bottom and surface temperature and salinity.  The column <strong>CTD</strong> has the name of the station in the first row, followed by nothing.  If you look in the original file with Excel, each row under <strong>MB8J</strong> is empty.  Empty cells are labeled <code class="docutils literal notranslate"><span class="pre">NaN</span></code> - Not a Number.</p>
+<p>You can extract a specific variable from the dataset by using the column name.  This is the time to choose a more descriptive variable name.  Let’s extract the surface temperature and look at the first five rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get the surface temperature and check the values</span>
+<span class="n">temp_surf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;T-Surface&#39;</span><span class="p">]</span>
+<span class="n">temp_surf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    19.418117
+1    19.752113
+2    19.865190
+3    19.204679
+4    16.833044
+Name: T-Surface, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have an array of numbers, we can do general statistics on it.  Check the min, max, and mean of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Find min, max, and mean</span>
+<span class="n">temp_surf</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">temp_surf</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">temp_surf</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24.135902121257146
+</pre></div>
+</div>
+</div>
+</div>
+<p>Executing a block of code will only list the output of the <strong>last</strong> command, so we need to add some print statements.  Also, these statistics might come in handy, so let’s save each of them to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Save the statistics to variables</span>
+<span class="n">temp_surf_min</span> <span class="o">=</span> <span class="n">temp_surf</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">temp_surf_max</span> <span class="o">=</span> <span class="n">temp_surf</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">temp_surf_mean</span> <span class="o">=</span> <span class="n">temp_surf</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="c1">#Print them out in a way that is useful and easy to read</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tmin =&quot;</span><span class="p">,</span><span class="n">temp_surf_min</span><span class="p">,</span><span class="s2">&quot;, Tmax =&quot;</span><span class="p">,</span><span class="n">temp_surf_max</span><span class="p">,</span><span class="s2">&quot;, Tmean =&quot;</span><span class="p">,</span><span class="n">temp_surf_mean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tmin = 11.32288893 , Tmax = 32.76987648 , Tmean = 24.135902121257146
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is it reasonable for <em>Tmean</em> to be written with such precision?  Do you ever hear the weather forecast to eight decimals?  Introducing the <code class="docutils literal notranslate"><span class="pre">round()</span></code> function.  When you are working with data, keep measurement uncertainty in mind when doing the calculations, and keep readability in mind when writing a general report. So, as a new reporter for <a class="reference external" href="https://www.seatemperature.org/north-america/united-states/mobile.htm">SeaTemperature.org</a>, I might do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#One decimal is good enough for my boss...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Surface Temperatures - Min:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">temp_surf_min</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot;Max:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">temp_surf_max</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot;Avg:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">temp_surf_mean</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Surface Temperatures - Min: 11.3 Max: 32.8 Avg: 24.1
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise 7:</strong> Give a report on the bottom temperature</p>
+<ol class="arabic simple">
+<li><p>Get the bottom temperature and check the values</p></li>
+<li><p>Find min, max, and mean, and save to variables</p></li>
+<li><p>Print them out in a way that is useful and easy to read</p></li>
+</ol>
+<p><strong>Your Solutions:</strong></p>
+</section>
+<hr class="docutils" />
+<section id="filtering-data">
+<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">#</a></h3>
+<p>When working with data, you may want to remove outliers or focus on a specific location or date range. For example, you may only want examine data below or above a certain threshold. You can subset the data using comparison operators:</p>
+<ul class="simple">
+<li><p>less than: <strong>&lt;</strong></p></li>
+<li><p>less than or equal to: <strong>&lt;=</strong></p></li>
+<li><p>greater than: <strong>&gt;</strong></p></li>
+<li><p>greater than or equal to: <strong>&gt;=</strong></p></li>
+<li><p>equals: <strong>==</strong></p></li>
+<li><p>not equals: <strong>!=</strong></p></li>
+</ul>
+<p>A comparison espression returns a True or False statement.  Here are some examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#True or False?</span>
+<span class="s2">&quot;Apples&quot;</span> <span class="o">==</span> <span class="s2">&quot;Oranges&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#True or False?</span>
+<span class="mi">500</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use a comparison expression to define a variable.  The data type is called a ‘boolean’, and boolean values are either True or False.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#True or False and what type?</span>
+<span class="n">fruit</span> <span class="o">=</span> <span class="s2">&quot;Apples&quot;</span> <span class="o">!=</span> <span class="s2">&quot;Oranges&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">fruit</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comparison expressions may be combined using <strong>and</strong> (&amp;) and <strong>or</strong> (|).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Is 5 greater than 1 but less than 10?</span>
+<span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our data has temperature and salinity.  I don’t like to swim unless the water is nearly bathtub temperature, and I don’t care what the salinity is if I’m not swimming.  I can limit my dataset by creating a conditional expression such that the temperature is over 31°C.  We use this conditional expression to create what is known as a ‘mask’, which can be used later to create a new dataset with only the data we are interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Mask will be True for all values over 31</span>
+<span class="c1">#Recall: temp_surf = df[&#39;T-Surface&#39;]</span>
+<span class="n">temp_mask</span> <span class="o">=</span> <span class="n">temp_surf</span>  <span class="o">&gt;</span> <span class="mi">31</span>
+<span class="c1">#Only the first 5 and last 5 rows of df are shown</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp_mask</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+345    False
+346    False
+347    False
+348    False
+349    False
+Name: T-Surface, Length: 350, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Applying the mask to the original temperature dataset gives us the subset of temperature data we’re interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Just get the warmer water data</span>
+<span class="n">warm_data</span> <span class="o">=</span> <span class="n">temp_surf</span><span class="p">[</span><span class="n">temp_mask</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">warm_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>154    31.002864
+176    31.302196
+177    31.704169
+178    31.421270
+181    31.217889
+         ...    
+260    31.768182
+261    31.357623
+275    31.072324
+276    31.348356
+277    31.318060
+Name: T-Surface, Length: 69, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>How does my temperature preference affect the number of days I might go for a swim?  Use the <code class="docutils literal notranslate"><span class="pre">size</span></code> attribute to find out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#How often would I go swimming?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I would only go swimming on &quot;</span><span class="p">,</span> <span class="n">warm_data</span><span class="o">.</span><span class="n">size</span><span class="p">,</span><span class="s2">&quot;of the&quot;</span><span class="p">,</span> <span class="n">temp_surf</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="s2">&quot;dates included in this dataset.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I would only go swimming on  69 of the 350 dates included in this dataset.
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise 8: Your turn to filter some data</strong></p>
+<p>Starting from the original dataset <code class="docutils literal notranslate"><span class="pre">df</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Create a mask that filters the surface temperature to ‘perfect pool’ temperatures (25 - 28°C). <strong>Hint:</strong> Put parentheses around your conditional expressions.</p></li>
+<li><p>Apply your mask to the surface salinity taken from the original data set.</p></li>
+<li><p>Find the average surface salinity for 1) the entire dataset and 2) the ‘perfect pool’ dataset.</p></li>
+<li><p>Make a report summarizing your findings.</p></li>
+</ol>
+<p><strong>Your Solutions</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basic-figures-and-plots">
+<h2>Basic Figures and Plots<a class="headerlink" href="#basic-figures-and-plots" title="Permalink to this headline">#</a></h2>
+<p>For visualization with Python, folks use Matplotlib.  Here is what <a class="reference external" href="https://matplotlib.org">Matplotlib</a> has to say about itself:</p>
+<blockquote cite="https://matplotlib.org">
+Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.
+</blockquote>
+<p>That sounds pretty good.  Let’s try it out.  First, import the package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import matplotlib, call it plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#And I forget what our data looks like... </span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CTD</th>
+      <th>Date</th>
+      <th>T-Surface</th>
+      <th>T-Bottom</th>
+      <th>S-Surface</th>
+      <th>S-Bottom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>MB8J</td>
+      <td>1/1/2019</td>
+      <td>19.418117</td>
+      <td>19.323412</td>
+      <td>8.746278</td>
+      <td>11.118851</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>1/2/2019</td>
+      <td>19.752113</td>
+      <td>19.416435</td>
+      <td>8.018461</td>
+      <td>11.788327</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>1/3/2019</td>
+      <td>19.865190</td>
+      <td>19.771955</td>
+      <td>10.140968</td>
+      <td>11.814590</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1/4/2019</td>
+      <td>19.204679</td>
+      <td>19.229073</td>
+      <td>11.242235</td>
+      <td>11.247988</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>1/5/2019</td>
+      <td>16.833044</td>
+      <td>17.105726</td>
+      <td>8.877601</td>
+      <td>11.490634</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<hr class="docutils" />
+<section id="time-series-plots">
+<h3>Time series plots<a class="headerlink" href="#time-series-plots" title="Permalink to this headline">#</a></h3>
+<p>I have dates, and I have data.  Matplotlib has a <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function. If Matplotlib lives up to it’s hype, I can make a plot with no worries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Attempt a time series plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;T-Surface&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x175889650&gt;]
+</pre></div>
+</div>
+<img alt="_images/a760a991183e05ffe69f47242655532092f0349fbfbe446f0a014297c27040c8.png" src="_images/a760a991183e05ffe69f47242655532092f0349fbfbe446f0a014297c27040c8.png" />
+</div>
+</div>
+<p>So it is relatively easy to get a plot.  How about a <strong>decent looking</strong> plot?  If you take a look at the axes, the y axis looks normal and the x axis looks like garbage.  This is because of the date formatting.  We’ll revisit date/time formatting in the next lab.  First, let’s just try some simple formatting with other types of plots.</p>
+</section>
+<hr class="docutils" />
+<section id="histograms">
+<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
+<p>Let’s try a histogram, which shows a count of how many data points have a certain range of values.  This time we will do some basic plot formatting.</p>
+<p>In Matplotlib, we create a blank canvas, we paint whatever we want, and when we’re finished and ready, we show off our art.  Here is the beginner painting.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code> creates a blank canvas with specified dimensions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code> adds the histogram</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> completes and renders the plot</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Basic histogram of surface temperature</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;T-Surface&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dd3c71015c89ad65c9bdf75adfb19373527884be9f238ecbe5f005a1546cfdf4.png" src="_images/dd3c71015c89ad65c9bdf75adfb19373527884be9f238ecbe5f005a1546cfdf4.png" />
+</div>
+</div>
+<p>For the next round, let’s modify by:</p>
+<ul class="simple">
+<li><p>Giving the histogram a bin number instead of using the default</p></li>
+<li><p>Changing the color of the histogram</p></li>
+<li><p>Adding x and y labels</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Refined histogram of surface temperature with labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;T-Surface&quot;</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+<span class="c1">#Google-search the special characters when you need them, like the degree symbol</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Surface Temperature($^\circ$C)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a0e725780a46cb10dec56a7c7cf7b13e03c7755608f5cee6a4f2a77c5c56e32e.png" src="_images/a0e725780a46cb10dec56a7c7cf7b13e03c7755608f5cee6a4f2a77c5c56e32e.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="box-plots">
+<h3>Box Plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">#</a></h3>
+<p>Let’s try a box plot.  A box plot, or box and whisker plot, displays the minimum, first quartile, median, third quartile, and maximum of a dataset.  Sometimes it also displays the outliers.</p>
+<p>I don’t like a lonely box plot, so let’s look at box plots of <em>all</em> the quantities.  This is where a list comes in handy.  Pass a list of the data to the boxplot function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Friendly box plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="c1">#Create list of temperature data</span>
+<span class="n">list_of_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;T-Surface&quot;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;T-Bottom&quot;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;S-Surface&quot;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;S-Bottom&quot;</span><span class="p">]]</span>
+<span class="c1">#And a list of labels</span>
+<span class="n">list_of_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;T-Surf&#39;</span><span class="p">,</span><span class="s1">&#39;T-Bot&#39;</span><span class="p">,</span><span class="s1">&#39;S-Surf&#39;</span><span class="p">,</span><span class="s1">&#39;S-Bot&#39;</span><span class="p">]</span>
+<span class="c1">#Make the boxplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">list_of_data</span><span class="p">,</span><span class="n">labels</span><span class="o">=</span><span class="n">list_of_labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fe0d67b207755f4a21ac7d0fd0252a6e48f23a017d00a8a6769bd02be5b84987.png" src="_images/fe0d67b207755f4a21ac7d0fd0252a6e48f23a017d00a8a6769bd02be5b84987.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="scatter-plots">
+<h3>Scatter plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">#</a></h3>
+<p>And the good ole’ scatter plot.  Let’s make things interesting by adding a colormap.</p>
+<p>In the next plot, we:</p>
+<ol class="arabic simple">
+<li><p>Import the colormap package.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">Choose a colormap</a>.  This example chooses ‘Jet’, popular to the masses and discouraged by visualization gurus.  Personally, I love rainbow dots.</p></li>
+<li><p>Choose a variable to color by. Our colormap will change according to bottom temperature.</p></li>
+<li><p>Create a scatterplot of surface and bottom temperatures.</p></li>
+</ol>
+<p>In the scatterplot function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>x = data position</p></li>
+<li><p>y = data position</p></li>
+<li><p>s = marker size</p></li>
+<li><p>c = sequence of numbers to be mapped to colors</p></li>
+<li><p>cmap = colormap</p></li>
+<li><p>alpha = transparency, where opaque==1</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import colormap package</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+
+<span class="c1">#variable to color by, and the name of our colormap</span>
+<span class="n">colorby</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;T-Bottom&#39;</span><span class="p">]</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="s1">&#39;jet_r&#39;</span>
+
+<span class="c1">#Create a scatterplot of surface and bottom temperature and color by bottom temperature</span>
+<span class="c1">#Use big dots and make the dots semi-transparent</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;T-Bottom&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;T-Surface&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colorby</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Bottom Temperature($^\circ$C)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Surface Temperature($^\circ$C)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aacb59d87ad0f25e2f1dd9b36c6d43258542bb42e80977faedca89a9c05b03aa.png" src="_images/aacb59d87ad0f25e2f1dd9b36c6d43258542bb42e80977faedca89a9c05b03aa.png" />
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercise 9:</strong>  Create your own plot.</p>
+<ul class="simple">
+<li><p>Recreate any of the plots above, but use different variables, modify the labels, and change attributes such as colors or colormap.</p></li>
+</ul>
+<p><strong>Optional:</strong></p>
+<p>If you have time and interest, try any of the following with the help of Google or the <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">Matplotlib</a> documentation.</p>
+<ul class="simple">
+<li><p>Choose custom limits for the x and y ranges.</p></li>
+<li><p>Add a title.</p></li>
+<li><p>Show multiple plots in one figure.</p></li>
+<li><p>Try different colormaps, and read a bit about choosing colormaps for accessibility. See for example: <a class="reference external" href="http://www.color-blindness.com">Info on colorblindness</a> and <a class="reference external" href="https://cmasher.readthedocs.io">Python packages for choosing colormaps</a>.</p></li>
+<li><p>Make a timeseries plot with reasonable x-axis labels, or simply remove the x-axis labels completely.  Add additional variables to the timeseries plot.  Choose different colors or symbols (e.g., dotted, dashed, etc.) for the different variables, and create a legend.</p></li>
+</ul>
+<p><strong>Your Solution:</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="turn-in-your-lab">
+<h2>Turn in your lab<a class="headerlink" href="#turn-in-your-lab" title="Permalink to this headline">#</a></h2>
+<p>Download your notebook with the completed exercises and turn it in as the lab assignment.</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>You have learned:</p>
+<ul>
+<li><p>The basics of using Jupyter Notebook</p></li>
+<li><p>Basic syntax of Python</p></li>
+<li><p>Data types, lists, and arrays</p></li>
+<li><p>Reading in ASCII data</p></li>
+<li><p>Filter data and calculate basic summary statistics</p></li>
+<li><p>Basic plotting and visualization</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="attribution">
+<h2>Attribution<a class="headerlink" href="#attribution" title="Permalink to this headline">#</a></h2>
+<p>Creating this lab was facilitated by using content from <a class="reference external" href="https://github.com/modern-tools-workshop/AGU-python-workshop-2021">AGU 2021 Python for Earth Sciences workshop</a>, developed and led by <a class="reference external" href="http://www.rebekahesmaili.com">Rebekah Esmaili</a> (<a class="reference external" href="mailto:bekah&#37;&#52;&#48;umd&#46;edu">bekah<span>&#64;</span>umd<span>&#46;</span>edu</a>), Research Scientist, STC/JPSS. We are grateful for Rebekah’s generous support of Open Science and sharing all her hard work!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="proposal-summary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Proposal Summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="surface-heat-fluxes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab 8:Investigating Surface Heat Fluxes in the Coastal Ocean</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-python">Why Use Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-objectives">Lesson Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-notebook-for-python">Using Jupyter Notebook for Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-your-work">Saving your work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-lists">Working with Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">Importing Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-arrays">Working with Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-am-i-reshaping-arrays">Why am I reshaping arrays??</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-ascii-data">Reading ASCII Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-figures-and-plots">Basic Figures and Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-plots">Time series plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turn-in-your-lab">Turn in your lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution">Attribution</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lisa L. Lowe, and The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
