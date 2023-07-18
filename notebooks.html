@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -65,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lab 3: Introduction to Python I" href="intro-to-python1.html" />
-    <link rel="prev" title="Proposal Summary" href="proposal-summary.html" />
+    <link rel="prev" title="Best track data" href="best-track.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -161,7 +162,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="about.html">What is ScienceCore?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="proposal-summary.html">Proposal Summary</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Articles</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pubs.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best-track.html">Best track data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Labs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">About the Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-to-python1.html">Lab 3:  Introduction to Python I</a></li>
@@ -360,7 +366,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-in-progress">Work in progress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-links">Binder Links</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-lab">Start a lab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-3-introduction-to-python">Lab 3: Introduction to Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-8-surface-heat-fluxes-in-the-coastal-ocean">Lab 8: Surface Heat Fluxes in the Coastal Ocean</a></li>
 </ul>
@@ -386,9 +392,9 @@ document.write(`
 <p>We are waiting until a lab is somewhat polished before posting it live.  As a consequence, the labs are not sequential in topic or difficulty.  For this reason, we include the Lab number as they appear on our syllabus.  As you can see, the heat flux lab is quite a jump from the Python intro.</p>
 <p>Please ask questions or give feedback by clicking the GitHub icon the top of the page and selecting <strong>Open issue</strong>.</p>
 </section>
-<section id="binder-links">
-<h2>Binder Links<a class="headerlink" href="#binder-links" title="Permalink to this headline">#</a></h2>
-<p>To go directly to an interactive notebook, click one of the Binder button below.</p>
+<section id="start-a-lab">
+<h2>Start a lab<a class="headerlink" href="#start-a-lab" title="Permalink to this headline">#</a></h2>
+<p>To go directly to an interactive notebook, click one of the Binder buttons below.</p>
 <section id="lab-3-introduction-to-python">
 <h3>Lab 3: Introduction to Python<a class="headerlink" href="#lab-3-introduction-to-python" title="Permalink to this headline">#</a></h3>
 <p>During this lab, you will learn:</p>
@@ -397,9 +403,9 @@ document.write(`
 <li><p>Basic syntax of Python</p></li>
 <li><p>Data types, lists, and arrays</p></li>
 <li><p>Reading in ASCII data</p></li>
-<li><p>Filter data and calculate basic summary statistics
-<a class="reference external" href="https://mybinder.org/v2/gh/l3-hpc/intro-computational-marine-sciences.git/main?labpath=Lab3_Intro_to_Python_1.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p></li>
+<li><p>Filter data and calculate basic summary statistics</p></li>
 </ul>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/l3-hpc/intro-computational-marine-sciences.git/main?labpath=Lab3_Intro_to_Python_1.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </section>
 <section id="lab-8-surface-heat-fluxes-in-the-coastal-ocean">
 <h3>Lab 8: Surface Heat Fluxes in the Coastal Ocean<a class="headerlink" href="#lab-8-surface-heat-fluxes-in-the-coastal-ocean" title="Permalink to this headline">#</a></h3>
@@ -408,9 +414,9 @@ document.write(`
 <li><p>Interpret relationships between oceanic and atmospheric data</p></li>
 <li><p>Plot sea surface temperature and heat fluxes</p></li>
 <li><p>Assess the importance of the surface heat fluxes in an ocean temperature budget</p></li>
-<li><p>Understand the impact of different environmental conditions in bulk heat flux formulas
-<a class="reference external" href="https://mybinder.org/v2/gh/l3-hpc/heat-flux-lab.git/main?labpath=Surface_Heat_Fluxes.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p></li>
+<li><p>Understand the impact of different environmental conditions in bulk heat flux formulas</p></li>
 </ul>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/l3-hpc/heat-flux-lab.git/main?labpath=Surface_Heat_Fluxes.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </section>
 </section>
 </section>
@@ -447,12 +453,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="proposal-summary.html"
+       href="best-track.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Proposal Summary</p>
+        <p class="prev-next-title">Best track data</p>
       </div>
     </a>
     <a class="right-next"
@@ -483,7 +489,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-in-progress">Work in progress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binder-links">Binder Links</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-lab">Start a lab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-3-introduction-to-python">Lab 3: Introduction to Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-8-surface-heat-fluxes-in-the-coastal-ocean">Lab 8: Surface Heat Fluxes in the Coastal Ocean</a></li>
 </ul>
