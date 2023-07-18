@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">About the Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-to-python1.html">Lab 3:  Introduction to Python I</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 8:Investigating Surface Heat Fluxes in the Coastal Ocean</a></li>
 </ul>
@@ -397,7 +398,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-environmental-conditions-driving-surface-heat-fluxes">Determine Environmental Conditions Driving Surface Heat Fluxes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-formula-for-latent-heat-flux">Bulk formula for Latent Heat Flux</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-wind-speed-and-relative-humidity">Plot the wind speed and relative humidity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-this-to-the-bulk-formula-for-sensible-heat-flux">Compare this to the bulk formula for Sensible Heat Flux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-to-bulk-formula-for-sensible-heat-flux">Compare to bulk formula for Sensible Heat Flux</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-sensible-heat-flux-and-difference-in-the-air-and-water-temperature-data">Plot the sensible heat flux and difference in the air and water temperature data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion Questions</a></li>
 </ul>
@@ -526,7 +527,7 @@ If you are using <strong>Binder</strong>, click the folder icon in the left hand
 <hr class="docutils" />
 <section id="load-the-python-libraries-and-functions">
 <h3>Load the Python libraries and functions<a class="headerlink" href="#load-the-python-libraries-and-functions" title="Permalink to this headline">#</a></h3>
-<p>All of the functions used in this lab are in a file called <em><strong><a class="reference external" href="http://heatfluxlab.py">heatfluxlab.py</a></strong></em>, located in the same directory as this notebook. Each of the functions are also defined at the end of the notebook, so you can easily look at or modify them.</p>
+<p>All of the functions used in this lab are in a file called <code class="docutils literal notranslate"><span class="pre">heatfluxlab.py</span></code>, located in the same directory as this notebook. Each of the functions are also defined at the end of the notebook, so you can easily look at or modify them.</p>
 <p>Run the next cell to import these libraries and functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1423,15 +1424,14 @@ To examine this, we can calculate the expected temperature change in the water c
 </div>
 </section>
 <hr class="docutils" />
-<section id="compare-this-to-the-bulk-formula-for-sensible-heat-flux">
-<h3>Compare this to the bulk formula for Sensible Heat Flux<a class="headerlink" href="#compare-this-to-the-bulk-formula-for-sensible-heat-flux" title="Permalink to this headline">#</a></h3>
-<p>Recall the bulk formula for Latent Heat Flux <span class="math notranslate nohighlight">\((9)\)</span>
-$<span class="math notranslate nohighlight">\(Q_e = \rho_a L_E C_L U_{10}(q_a-q_s)
-\)</span><span class="math notranslate nohighlight">\(
-Compare this with the bulk formula for the Sensible Heat Flux:
-\)</span><span class="math notranslate nohighlight">\(Q_h = \rho_a c_p C_S U_{10}(T_a-T_s)\label{eq11}\tag{11}
-\)</span>$
-where</p>
+<section id="compare-to-bulk-formula-for-sensible-heat-flux">
+<h3>Compare to bulk formula for Sensible Heat Flux<a class="headerlink" href="#compare-to-bulk-formula-for-sensible-heat-flux" title="Permalink to this headline">#</a></h3>
+<p>Recall the bulk formula for Latent Heat Flux, eq(10):  <span class="math notranslate nohighlight">\(Q_e = \rho_a L_E C_L U_{10}(q_a-q_s)\)</span>.</p>
+<p>Compare this with the bulk formula for the Sensible Heat Flux:</p>
+<div class="math notranslate nohighlight">
+\[Q_h = \rho_a c_p C_S U_{10}(T_a-T_s)\label{eq11}\tag{11}
+\]</div>
+<p>where</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>Term</p></th>
@@ -1568,7 +1568,7 @@ where</p>
 </section>
 <section id="the-following-contains-all-the-code-for-the-functions">
 <h2>The following contains all the code for the functions<a class="headerlink" href="#the-following-contains-all-the-code-for-the-functions" title="Permalink to this headline">#</a></h2>
-<p>Below are all of the functions defined in <a class="reference external" href="http://heatfluxlab.py">heatfluxlab.py</a>.  You can try modifying the functions here, and if you run the cell with the modified function, it will change that function definition for the session.  If you break something, go to the beginning and to the ‘import’ step again</p>
+<p>Below are all of the functions defined in <code class="docutils literal notranslate"><span class="pre">heatfluxlab.py</span></code>.  You can try modifying the functions here, and if you run the cell with the modified function, it will change that function definition for the session.  If you break something, go to the beginning and to the ‘import’ step again</p>
 </section>
 <hr class="docutils" />
 <section id="importing-the-python-libraries">
@@ -2072,7 +2072,7 @@ where</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-environmental-conditions-driving-surface-heat-fluxes">Determine Environmental Conditions Driving Surface Heat Fluxes</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-formula-for-latent-heat-flux">Bulk formula for Latent Heat Flux</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-wind-speed-and-relative-humidity">Plot the wind speed and relative humidity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-this-to-the-bulk-formula-for-sensible-heat-flux">Compare this to the bulk formula for Sensible Heat Flux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-to-bulk-formula-for-sensible-heat-flux">Compare to bulk formula for Sensible Heat Flux</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-sensible-heat-flux-and-difference-in-the-air-and-water-temperature-data">Plot the sensible heat flux and difference in the air and water temperature data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Discussion Questions</a></li>
 </ul>
