@@ -2,7 +2,7 @@
 
 This is the GitHub repo for the [ScienceCore: Marine Sciences website](https://sciencecore-marine-sciences.github.io), a JupyterBook.
 
-Please open an [Issue](https://github.com/sciencecore-marine-sciences/sciencecore-marine-sciences.io/issues) or 
+Please open an [Issue](https://github.com/sciencecore-marine-sciences/sciencecore-marine-sciences.github.io/issues) or 
 start a [discussion](https://github.com/orgs/sciencecore-marine-sciences/discussions) to make comments about the page.
 
 Thanks for visiting!
