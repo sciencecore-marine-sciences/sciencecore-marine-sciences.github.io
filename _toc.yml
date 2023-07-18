@@ -8,7 +8,12 @@ parts:
     chapters:
       - file: about.md
       - file: proposal-summary
-  - caption: Notebooks
+  - caption: The Articles 
     chapters:
+      - file: pubs
+      - file: best-track 
+  - caption: The Labs 
+    chapters:
+      - file: notebooks
       - file: intro-to-python1
       - file: surface-heat-fluxes

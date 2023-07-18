@@ -33,7 +33,7 @@ Using existing research products as a starting point, we will develop:
 2. Online, interactive tutorials that lower the learning curve for using satellite data
 3. A recipe for transforming a traditional workflow into an open one
 
-## Under construction
+## We're under construction
 In keeping with OSSI:
 > Open-source science is a commitment to the open sharing...*as early as possible in the scientific process*.
 
@@ -43,7 +43,7 @@ Not much to see yet?  Please come back and visit us again soon!
 
 ## We're here to help
 
-We want to make computational tasks easy, so you can focus on your science.  As we build these materials, we invite you to try things out.  If something isn't clear or you are having difficulty doing the tasks described, then we have not achieved our goal.  Please reach out for help if you have questions.  As part of NASA's Transform to Open Science Training(TOPST)(https://nasa.github.io/Transform-to-Open-Science) initiative, we have dedicated (human) resources to help you with your goals.  Thanks NASA! 
+We want to make computational tasks easy, so you can focus on your science.  As we build these materials, we invite you to try things out.  If something isn't clear or you are having difficulty doing the tasks described, then we have not achieved our goal.  Please reach out for help if you have questions.  As part of NASA's [Transform to Open Science Training(TOPST)](https://nasa.github.io/Transform-to-Open-Science) initiative, we have dedicated (human) resources to help you with your goals.  Thanks NASA! 
 
 ## NASA's Transform to Open Science
 {{topslogo}} This effort is funded by NASA's [Transform to Open Science](https://nasa.github.io/Transform-to-Open-Science) Training (TOPST) program under award 80NSSC23K0863 to North Carolina State University with University of South Alabama.

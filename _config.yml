@@ -17,13 +17,6 @@ bibtex_bibfiles:
 bibtex_reference_style: 
     - author_year
 
-#latex-style math
-#parse: 
-#  myst_enable_extensions:
-#  # don't forget to list any other extensions you want enabled,
-#  # including those that are enabled by default!
-#  - amsmath
-
 mathjax_path: 
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
