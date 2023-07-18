@@ -1,5 +1,4 @@
 # sciencecore-marine-sciences.github.io
-Computational training for marine science
 
 This is the GitHub repo for the [ScienceCore: Marine Sciences website](https://sciencecore-marine-sciences.github.io), a JupyterBook.
 
