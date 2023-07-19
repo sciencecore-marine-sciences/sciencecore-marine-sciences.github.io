@@ -6,13 +6,15 @@ root: intro
 parts:
   - caption: Introduction
     chapters:
-      - file: about.md
-      - file: proposal-summary
-  - caption: The Articles 
+    - file: about
+    - file: proposal-summary
+  - caption: Following Sally 
     chapters:
-      - file: pubs
-      - file: best-track 
-  - caption: The Labs 
+    - file: sally
+    - file: best-track 
+      sections:
+      - file: interactive 
+  - caption: Marine Science Labs 
     chapters:
       - file: notebooks
       - file: intro-to-python1
