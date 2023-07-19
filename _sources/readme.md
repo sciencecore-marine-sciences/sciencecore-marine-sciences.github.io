@@ -1,34 +1,20 @@
-# ScienceCore for Marine Sciences
+# sciencecore-marine-sciences.github.io
 
-A suite of tutorials on data collection, analysis methods, and visualization techniques used in physical oceanography and biogeochemistry created by retracing the steps needed to reproduce results from two published articles([1,2](https://github.com/TOPS-Marine-ScienceCore/.github/blob/main/README.md#references)) on:
-1. combining field data with satellite data to understand the sea surface temperature conditions associated with a hurricane undergoing rapid intensification over the continental shelf
-2. using locally calibrated satellite products to improve the satellite estimation of the partial pressure of carbon dioxide in coastal waters
+This is the GitHub repo for the [ScienceCore: Marine Sciences website](https://sciencecore-marine-sciences.github.io), a JupyterBook.
 
+Please open an [Issue](https://github.com/sciencecore-marine-sciences/sciencecore-marine-sciences.github.io/issues) or 
+start a [discussion](https://github.com/orgs/sciencecore-marine-sciences/discussions) to make comments about the page.
 
-## Open-Source Science
+Thanks for visiting!
 
-From NASA'S Open-Source Science Initiative ([OSSI](https://science.nasa.gov/open-science-overview)):
-> Open-source science requires a culture shift to a more inclusive, transparent, and collaborative scientific process, which will increase the pace and quality of scientific progress.
+## What are those files?
 
-As part of the OSSI, course materials are being developed for [Open Science 101](https://nasa.github.io/Transform-to-Open-Science/open-science-101), also called **OpenCore**.  Beyond the basics, it is often difficult
-to find the time or motivation to study something not specifically applicable to our current workloads.  Enter **ScienceCore**: 
-> ScienceCore is a curriculum of discipline-specific materials that showcase open-science workflows.
+This repo has markdown files and config files that are 'compiled' into static html files and pushed to a github branch to publish the 
+files to the website.
 
-## Scope
+It's not worth your time to dig through those files or to figure out how to do a pull request for the site. 
 
-We hope to make data collection and computational tasks accessible to any student or researcher regardless of computing background.  As we build this tutorial, please comment and post questions on any of the included computational science topics - we're here to help!
+I would often click someone's 'GitHub' button on a site, or someone would send a link to a repo of their 'great site', and I get there 
+and there is no README and no intelligible files.  I wondered, how do they expect me to contribute to *this*???  Well...now I understand.
 
-Scientific conclusions are made by domain scientists, often with decades of experience. Specific domain science questions are out of our scope, but perhaps we can point you to your nearest expert.
-
-## References
-1. B. Dzwonkowski, S. Fournier, G. Lockridge, J. Coogan, Z. Liu, and K. Park. [Hurricane Sally (2020) Shifts the Ocean Thermal Structure across the Inner Core during Rapid Intensification over the Shelf.](https://journals.ametsoc.org/view/journals/phoc/52/11/JPO-D-22-0025.1.xml) Journal of Physical Oceanography, 52(11), 2841-2852.
-2. Le, C., Y. Gao, W-J. Cai, J. Lehrter, Y. Bai, and Z-P. Jiang. [Estimating summer sea surface pCO2 on a river-dominated continental shelf using a satellite-based semi-mechanistic model.](https://doi.org/10.1016/j.rse.2019.02.023) Remote Sensing of Environment, 225, 115-126. 
-
-
-## NASA's Transform to Open Science
-
-This effort is funded by NASA's [Transform to Open Science](https://nasa.github.io/Transform-to-Open-Science) Training (TOPST) program under award 80NSSC23K0863 to North Carolina State University with University of South Alabama.
-
-See the [Proposal Summary](proposal-summary.md) for more details.
-
-[Get started with Open Science!](https://nasa.github.io/Transform-to-Open-Science-Book/Open_Science_Cookbook/Your_Open_Science_Journey.html#section-1-core-open-science-skills)
+I'll add documentation on how I created this book soon.
