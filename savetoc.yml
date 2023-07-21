@@ -8,6 +8,12 @@ parts:
     chapters:
     - file: about
     - file: proposal-summary
+  - caption: Following Sally 
+    chapters:
+    - file: sally
+    - file: best-track 
+      sections:
+      - file: interactive 
   - caption: Marine Science Labs 
     chapters:
       - file: notebooks
