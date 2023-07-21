@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Trying tropycal for HURDAT2 &#8212; Marine ScienceCore</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tropycal';</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    ScienceCore: Marine Sciences
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about.html">What is ScienceCore?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal-summary.html">Proposal Summary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Marine Science Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">About the Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-to-python1.html">Lab 3:  Introduction to Python I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surface-heat-fluxes.html">Lab 8:Investigating Surface Heat Fluxes in the Coastal Ocean</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/sciencecore-marine-sciences/sciencecore-marine-sciences.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/sciencecore-marine-sciences/sciencecore-marine-sciences.github.io/issues/new?title=Issue%20on%20page%20%2Ftropycal.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tropycal.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Trying tropycal for HURDAT2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hurdat2">HURDAT2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-following-plots-model-data-of-temperature-and-salinity-at-sea-surface-and-bottom">The following plots model data of temperature and salinity at sea surface and bottom.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="trying-tropycal-for-hurdat2">
+<h1>Trying tropycal for HURDAT2<a class="headerlink" href="#trying-tropycal-for-hurdat2" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tropycal.github.io/tropycal/index.html">https://tropycal.github.io/tropycal/index.html</a></p></li>
+</ul>
+<section id="hurdat2">
+<h2>HURDAT2<a class="headerlink" href="#hurdat2" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tropycal.github.io/tropycal/examples/analogs.html">https://tropycal.github.io/tropycal/examples/analogs.html</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import libraries</span>
+<span class="kn">from</span> <span class="nn">tropycal</span> <span class="kn">import</span> <span class="n">tracks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#import libraries</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">tropycal</span> <span class="kn">import</span> <span class="n">tracks</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tropycal&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read the data, a &#39;TrackDataset&#39; object, hurdat is default, but use it anyway, don&#39;t use current year</span>
+<span class="n">basin</span> <span class="o">=</span> <span class="n">tracks</span><span class="o">.</span><span class="n">TrackDataset</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;north_atlantic&#39;</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;hurdat&#39;</span><span class="p">,</span><span class="n">include_btk</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--&gt; Starting to read in HURDAT2 data
+--&gt; Completed reading in HURDAT2 data (4.74 seconds)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Get info for Sally</span>
+<span class="n">storm</span> <span class="o">=</span> <span class="n">basin</span><span class="o">.</span><span class="n">get_storm</span><span class="p">((</span><span class="s1">&#39;sally&#39;</span><span class="p">,</span><span class="mi">2020</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">storm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tropycal.tracks.Storm&gt;
+Storm Summary:
+    Maximum Wind:      95 knots
+    Minimum Pressure:  965 hPa
+    Start Time:        1800 UTC 11 September 2020
+    End Time:          0600 UTC 17 September 2020
+
+Variables:
+    time        (datetime) [2020-09-11 18:00:00 .... 2020-09-18 06:00:00]
+    extra_obs   (int64) [0 .... 0]
+    special     (str) [ .... ]
+    type        (str) [TD .... EX]
+    lat         (float64) [25.4 .... 34.1]
+    lon         (float64) [-78.6 .... -80.8]
+    vmax        (int64) [30 .... 30]
+    mslp        (int64) [1007 .... 1005]
+    wmo_basin   (str) [north_atlantic .... north_atlantic]
+
+More Information:
+    id:              AL192020
+    operational_id:  AL192020
+    name:            SALLY
+    year:            2020
+    season:          2020
+    basin:           north_atlantic
+    source_info:     NHC Hurricane Database
+    source:          hurdat
+    ace:             7.3
+    realtime:        False
+    invest:          False
+    subset:          False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary of data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">storm</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;AL192020&#39;, &#39;operational_id&#39;: &#39;AL192020&#39;, &#39;name&#39;: &#39;SALLY&#39;, &#39;year&#39;: 2020, &#39;season&#39;: 2020, &#39;basin&#39;: &#39;north_atlantic&#39;, &#39;source_info&#39;: &#39;NHC Hurricane Database&#39;, &#39;source&#39;: &#39;hurdat&#39;, &#39;time&#39;: [datetime.datetime(2020, 9, 11, 18, 0), datetime.datetime(2020, 9, 12, 0, 0), datetime.datetime(2020, 9, 12, 6, 0), datetime.datetime(2020, 9, 12, 12, 0), datetime.datetime(2020, 9, 12, 18, 0), datetime.datetime(2020, 9, 13, 0, 0), datetime.datetime(2020, 9, 13, 6, 0), datetime.datetime(2020, 9, 13, 12, 0), datetime.datetime(2020, 9, 13, 18, 0), datetime.datetime(2020, 9, 14, 0, 0), datetime.datetime(2020, 9, 14, 6, 0), datetime.datetime(2020, 9, 14, 12, 0), datetime.datetime(2020, 9, 14, 18, 0), datetime.datetime(2020, 9, 15, 0, 0), datetime.datetime(2020, 9, 15, 6, 0), datetime.datetime(2020, 9, 15, 12, 0), datetime.datetime(2020, 9, 15, 18, 0), datetime.datetime(2020, 9, 16, 0, 0), datetime.datetime(2020, 9, 16, 6, 0), datetime.datetime(2020, 9, 16, 9, 45), datetime.datetime(2020, 9, 16, 12, 0), datetime.datetime(2020, 9, 16, 18, 0), datetime.datetime(2020, 9, 17, 0, 0), datetime.datetime(2020, 9, 17, 6, 0), datetime.datetime(2020, 9, 17, 12, 0), datetime.datetime(2020, 9, 17, 18, 0), datetime.datetime(2020, 9, 18, 0, 0), datetime.datetime(2020, 9, 18, 6, 0)], &#39;extra_obs&#39;: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], &#39;special&#39;: [&#39;&#39;, &#39;&#39;, &#39;L&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;L&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;], &#39;type&#39;: [&#39;TD&#39;, &#39;TD&#39;, &#39;TD&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;HU&#39;, &#39;TS&#39;, &#39;TS&#39;, &#39;TD&#39;, &#39;EX&#39;, &#39;EX&#39;, &#39;EX&#39;, &#39;EX&#39;], &#39;lat&#39;: [25.4, 25.6, 25.6, 25.5, 25.6, 26.0, 26.7, 27.2, 27.6, 27.9, 28.2, 28.4, 28.6, 28.7, 28.8, 29.0, 29.3, 29.6, 29.9, 30.3, 30.5, 31.1, 31.6, 32.1, 32.6, 33.2, 33.7, 34.1], &#39;lon&#39;: [-78.6, -79.4, -80.2, -80.8, -81.6, -82.5, -83.5, -84.5, -85.4, -86.0, -86.5, -86.9, -87.3, -87.7, -88.0, -88.1, -88.1, -88.0, -87.9, -87.7, -87.6, -87.2, -86.7, -86.1, -85.2, -83.8, -82.3, -80.8], &#39;vmax&#39;: [30, 30, 30, 35, 35, 35, 45, 50, 50, 50, 55, 65, 75, 75, 70, 70, 70, 75, 95, 95, 85, 60, 35, 30, 30, 30, 30, 30], &#39;mslp&#39;: [1007, 1004, 1003, 1003, 1003, 1003, 1001, 996, 996, 996, 996, 991, 986, 986, 984, 982, 981, 975, 967, 965, 967, 982, 994, 1000, 1003, 1004, 1004, 1005], &#39;wmo_basin&#39;: [&#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;, &#39;north_atlantic&#39;], &#39;ace&#39;: 7.31}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#xarray dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">storm</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:    (time: 28)
+Coordinates:
+  * time       (time) datetime64[ns] 2020-09-11T18:00:00 ... 2020-09-18T06:00:00
+Data variables:
+    extra_obs  (time) int64 0 0 0 0 0 0 0 0 0 0 0 0 ... 0 0 0 1 0 0 0 0 0 0 0 0
+    special    (time) &lt;U1 &#39;&#39; &#39;&#39; &#39;L&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; ... &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39; &#39;&#39;
+    type       (time) &lt;U2 &#39;TD&#39; &#39;TD&#39; &#39;TD&#39; &#39;TS&#39; &#39;TS&#39; ... &#39;TD&#39; &#39;EX&#39; &#39;EX&#39; &#39;EX&#39; &#39;EX&#39;
+    lat        (time) float64 25.4 25.6 25.6 25.5 25.6 ... 32.6 33.2 33.7 34.1
+    lon        (time) float64 -78.6 -79.4 -80.2 -80.8 ... -83.8 -82.3 -80.8
+    vmax       (time) int64 30 30 30 35 35 35 45 50 ... 85 60 35 30 30 30 30 30
+    mslp       (time) int64 1007 1004 1003 1003 1003 ... 1003 1004 1004 1005
+    wmo_basin  (time) &lt;U14 &#39;north_atlantic&#39; ... &#39;north_atlantic&#39;
+Attributes:
+    id:              AL192020
+    operational_id:  AL192020
+    name:            SALLY
+    year:            2020
+    season:          2020
+    basin:           north_atlantic
+    source_info:     NHC Hurricane Database
+    source:          hurdat
+    ace:             7.31
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-following-plots-model-data-of-temperature-and-salinity-at-sea-surface-and-bottom">
+<h3>The following plots model data of temperature and salinity at sea surface and bottom.<a class="headerlink" href="#the-following-plots-model-data-of-temperature-and-salinity-at-sea-surface-and-bottom" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pandas dataframe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">storm</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                  time  extra_obs special type   lat   lon  vmax  mslp  \
+0  2020-09-11 18:00:00          0           TD  25.4 -78.6    30  1007   
+1  2020-09-12 00:00:00          0           TD  25.6 -79.4    30  1004   
+2  2020-09-12 06:00:00          0       L   TD  25.6 -80.2    30  1003   
+3  2020-09-12 12:00:00          0           TS  25.5 -80.8    35  1003   
+4  2020-09-12 18:00:00          0           TS  25.6 -81.6    35  1003   
+5  2020-09-13 00:00:00          0           TS  26.0 -82.5    35  1003   
+6  2020-09-13 06:00:00          0           TS  26.7 -83.5    45  1001   
+7  2020-09-13 12:00:00          0           TS  27.2 -84.5    50   996   
+8  2020-09-13 18:00:00          0           TS  27.6 -85.4    50   996   
+9  2020-09-14 00:00:00          0           TS  27.9 -86.0    50   996   
+10 2020-09-14 06:00:00          0           TS  28.2 -86.5    55   996   
+11 2020-09-14 12:00:00          0           HU  28.4 -86.9    65   991   
+12 2020-09-14 18:00:00          0           HU  28.6 -87.3    75   986   
+13 2020-09-15 00:00:00          0           HU  28.7 -87.7    75   986   
+14 2020-09-15 06:00:00          0           HU  28.8 -88.0    70   984   
+15 2020-09-15 12:00:00          0           HU  29.0 -88.1    70   982   
+16 2020-09-15 18:00:00          0           HU  29.3 -88.1    70   981   
+17 2020-09-16 00:00:00          0           HU  29.6 -88.0    75   975   
+18 2020-09-16 06:00:00          0           HU  29.9 -87.9    95   967   
+19 2020-09-16 09:45:00          1       L   HU  30.3 -87.7    95   965   
+20 2020-09-16 12:00:00          0           HU  30.5 -87.6    85   967   
+21 2020-09-16 18:00:00          0           TS  31.1 -87.2    60   982   
+22 2020-09-17 00:00:00          0           TS  31.6 -86.7    35   994   
+23 2020-09-17 06:00:00          0           TD  32.1 -86.1    30  1000   
+24 2020-09-17 12:00:00          0           EX  32.6 -85.2    30  1003   
+25 2020-09-17 18:00:00          0           EX  33.2 -83.8    30  1004   
+26 2020-09-18 00:00:00          0           EX  33.7 -82.3    30  1004   
+27 2020-09-18 06:00:00          0           EX  34.1 -80.8    30  1005   
+
+         wmo_basin  
+0   north_atlantic  
+1   north_atlantic  
+2   north_atlantic  
+3   north_atlantic  
+4   north_atlantic  
+5   north_atlantic  
+6   north_atlantic  
+7   north_atlantic  
+8   north_atlantic  
+9   north_atlantic  
+10  north_atlantic  
+11  north_atlantic  
+12  north_atlantic  
+13  north_atlantic  
+14  north_atlantic  
+15  north_atlantic  
+16  north_atlantic  
+17  north_atlantic  
+18  north_atlantic  
+19  north_atlantic  
+20  north_atlantic  
+21  north_atlantic  
+22  north_atlantic  
+23  north_atlantic  
+24  north_atlantic  
+25  north_atlantic  
+26  north_atlantic  
+27  north_atlantic  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot...this takes a while</span>
+<span class="n">storm</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxes: title={&#39;left&#39;: &#39;Hurricane SALLY&#39;, &#39;right&#39;: &#39;11 Sep 2020 – 17 Sep 2020\n95 kt • 965 hPa • 7.3 ACE&#39;}&gt;
+</pre></div>
+</div>
+<img alt="_images/aed24924d2c4edebe436b176cadebaf76068f5a0750006f72911f1efaa4465e0.png" src="_images/aed24924d2c4edebe436b176cadebaf76068f5a0750006f72911f1efaa4465e0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Plot the tornado tracks, along with the accompanying daily practically perfect forecast</span>
+<span class="c1">#storm.plot_tors(plotPPH=True)</span>
+<span class="c1">#This one didn&#39;t work...I also tried with their example, michael, 2018</span>
+<span class="c1">#storm = basin.get_storm((&#39;michael&#39;,2018))</span>
+<span class="c1">#storm.plot_tors(plotPPH=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#If this storm was ever in NHC’s area of responsibility, you can retrieve operational NHC forecast data for this event provided it is available. </span>
+<span class="n">storm</span><span class="o">.</span><span class="n">get_nhc_discussion</span><span class="p">(</span><span class="n">forecast</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: 2,
+ &#39;time_issued&#39;: datetime.datetime(2020, 9, 12, 2, 43),
+ &#39;text&#39;: &#39;ZCZC MIATCDAT4 ALL\nTTAA00 KNHC DDHHMM\n \nTropical Depression Nineteen Discussion Number   2\nNWS National Hurricane Center Miami FL       AL192020\n1100 PM EDT Fri Sep 11 2020\n \nDoppler radar data from Miami and satellite images indicate that\nthe depression is gradually becoming better organized.  The\nlow-level center is estimated to be near the northwestern edge of \nthe main area of deep convection due to some northerly wind shear.  \nSurface observations and satellite classifications support holding \nthe initial intensity at 30 kt.  The minimum pressure appears to be \na little lower than before, now 1007 mb.\n \nThe tropical depression is moving west-northwestward at about 7\nkt. A subtropical ridge extending from the southeast U.S. to the\nwestern Atlantic should steer the depression west-northwestward\nacross south Florida tonight and Saturday morning and then over the\neastern Gulf of Mexico late Saturday and Sunday.  After that time,\nthe ridge is forecast to weaken due to an approaching trough,\nbut the trough is not expected to be strong enough to cause the\ncyclone to turn northward.  Instead, the models suggest that a slow\nwest-northwestward motion very near the northern Gulf coast is\nlikely during the early and middle portions of next week.\nAlthough the models all show a relatively similar scenario, there\nis a fair amount of spread by the time the system nears the\nnorthern Gulf coast.  The NHC track forecast lies roughly near the\nmiddle of the guidance envelope close to the consensus aids.\nSeveral of the local National Weather Service forecast offices\nacross the southeast U.S. will be launching weather balloons four\ntimes per day, which should provide the models with excellent data\nin hopes to provide better track guidance during the next couple of\ndays.\n \nSince the depression is expected to move over very warm SSTs, once\nit reaches the eastern Gulf of Mexico tomorrow, and remain in an\nenvironment of low wind shear and high moisture, gradual\nstrengthening seems likely.  The models suggest that there could\nbe an increase in westerly shear around the time the cyclone is\nforecast to move inland along the northern Gulf coast in about 4\ndays. Based on these expected environmental conditions,\nstrengthening is forecast during the next few days, and the NHC\nintensity forecast follows the trend of the IVCN and HCCA models.  \nThe depression will likely be at or near hurricane strength when \nit reaches the northern Gulf coast.\n \nUsers are reminded to not to focus on the exact details of\nthe track or intensity forecast as the average NHC track error at\n96 h is around 150 miles and the average intensity error is around\n15 mph.  In addition, winds, storm surge, and rainfall hazards will\nextend far from the center.\n \nKEY MESSAGES:\n \n1. Heavy rainfall is expected to produce isolated flash flooding\nover portions of central and southern Florida and prolong existing\nminor river flooding across central Florida.\n \n2. Tropical storm conditions are possible overnight and early \nSaturday along the southeast Florida coast where a Tropical Storm \nWatch is in effect.  Tropical storm conditions are possible by \nSunday night in portions of the Florida Panhandle, where a Tropical \nStorm Watch has been issued.\n \n3. The system is forecast to strengthen to near hurricane intensity\nby early next week as it moves across the northeastern Gulf of\nMexico. Dangerous impacts from storm surge, wind, and heavy rainfall\nwill be possible along the Gulf Coast from the Florida Panhandle to\nsoutheastern Louisiana late this weekend and early next week. \nResidents in these areas should monitor the progress of this system \nand updates to the forecast, as Storm Surge, Tropical Storm or \nHurricane watches could be issued on Saturday.\n \n \nFORECAST POSITIONS AND MAX WINDS\n \nINIT  12/0300Z 25.7N  79.8W   30 KT  35 MPH\n 12H  12/1200Z 26.0N  81.0W   30 KT  35 MPH...INLAND\n 24H  13/0000Z 26.8N  82.9W   35 KT  40 MPH\n 36H  13/1200Z 27.9N  84.6W   40 KT  45 MPH\n 48H  14/0000Z 28.8N  85.9W   45 KT  50 MPH\n 60H  14/1200Z 29.3N  86.9W   55 KT  65 MPH\n 72H  15/0000Z 29.7N  87.7W   60 KT  70 MPH\n 96H  16/0000Z 30.2N  89.5W   60 KT  70 MPH...INLAND\n120H  17/0000Z 31.3N  90.9W   25 KT  30 MPH...INLAND\n \n$$\nForecaster Cangialosi\n \nNNNN\n&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#If this storm was ever in NHC’s area of responsibility, you can retrieve operational NHC forecast data for this event provided it is available. </span>
+<span class="n">storm</span><span class="o">.</span><span class="n">plot_nhc_forecast</span><span class="p">(</span><span class="n">forecast</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxes: title={&#39;left&#39;: &#39;Tropical Depression NINETEEN&#39;, &#39;right&#39;: &#39;35 mph • 1007 hPa • Forecast #2\nForecast Issued: 0300 UTC 12 Sep 2020&#39;}&gt;
+</pre></div>
+</div>
+<img alt="_images/f8c8c591ed39402c0c4b47a63f0dcd03cfe940156938cecb15bb567e52c98166.png" src="_images/f8c8c591ed39402c0c4b47a63f0dcd03cfe940156938cecb15bb567e52c98166.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hurdat2">HURDAT2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-following-plots-model-data-of-temperature-and-salinity-at-sea-surface-and-bottom">The following plots model data of temperature and salinity at sea surface and bottom.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lisa L. Lowe, and The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
